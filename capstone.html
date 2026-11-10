@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Portfolio of Your Name" />
+  <title>Sungeun Shin — Portfolio</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://d3js.org/d3.v7.js" defer></script>
+  <script src="image.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="logo" href="index.html">Sungeun's portfolio</a>
+    <nav aria-label="Primary navigation">
+      <a href="index.html">Home</a>
+      <a href="index.html#research">Research</a>
+       <a href="capstone.html">Capstone</a>
+      <a href="mailto:you@example.com">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- CAPSTONE PAGE -->
+    <section class="page-section" id="capstone">
+      <p class="eyebrow">02 / Capstone project</p>
+      <h2>Interactive web-based mapping for wildfire in the western United States</h2>
+      <div class="two-column">
+        <p class="detail">
+          <br>
+          Considering the enormous threat that wildfires pose to U.S. socioeconomics and public health,
+          we visualize wildfire locations in western U.S. from 2000 to 2019, figuring out the occurrence time and 
+          the relatively burned area position of the wildfire, and summarizing the frequency of wildfires and the burned area across 
+          for each U.S. western state, to reveal inherent patterns of wildfire occurrence that is crucial for modeling future events.
+          <br>
+        </p>
+        <ul class="project-details">
+          <li><strong>Language</strong><span>JavaScript, HTML, CSS</span></li>
+        </ul>
+      </div>
+      <div class="project-media">
+        <figure class="visual-figure">
+          <img src="images/image11.jpg"></img>
+          <img src="images/image12.jpg"></img>
+          <figcaption>
+            Examples of interactive web-mapping tools for wildfire in 2000-2019 in the western U.S., along with 
+            interactive histograms showing the burned area and number of wildfire incidents for each state and 
+            interactive scatter plots showing temporal monthly variation in burned areas across western states. <br>
+            <strong>Project screencast link: </strong><a href="https://youtu.be/6z4KwQSF7qQ?si=ZIO0vTNfjep2bET2">https://youtu.be/6z4KwQSF7qQ?si=ZIO0vTNfjep2bET2</a> 
+          </figcaption>
+        </figure>
+        
+        <p class="detail">
+          <span><strong>Primary Tasks</strong></span>
+          <br>
+          Designed and deployed an interactive GIS web mapping application enabling real-time toggling across multi-year historical wildfire layers. 
+          Converted raw spatial point observations into dynamic polygon estimations of burned perimeters with custom interactive tooltips (probable ignition causes and spatial extents).
+          Constructed interactive scatter plots and time-series visualizations to analyze intra-annual monthly burning cycles and multi-year trajectory trends in wildfire frequency.
+          <br><br>
+          <span><strong>Key Findings</strong></span>
+          <br>
+          Spatial distribution of wildfires is uneven. Over the period from 2000 to 2018, Idaho and California 
+          consistently accounted for a large proportion of wildfire incidents in the U.S., underscoring thier vulnerability 
+          to such disasters. In terms of the burned area, California suffers the most large-scale burned wildfire. 
+          These trends demonstrate the need for targeted wildfire prediction systems and disaster management tailored to the 
+          specific geographic and climatic conditions of these states. 
+        </p>
+      </div>
+      <section style="margin-top: 24px; margin-bottom: 24px;">
+        <h2>Optimizing public transit networks based on accessibility to urban green space: 
+          a case study in Salt Lake City, Utah
+        </h2>
+        <div class="two-column">
+        <p class="detail">
+          While urban green spaces provide vital public health benefits, their ecological and economic distributions are frequently unequal. New or restored green amenities often trigger localized property value appreciation, 
+          risking the displacement of low-income and vulnerable groups. 
+          Because transit-dependent populations rely heavily on public transportation, bridging mobility gaps to urban parks is essential for achieving equitable greening without compounding social displacement.
+          Implemeting the greedy algorithm, I optimized existing bus routes in SLC and compared the existing vs. updated routes 
+          based on closeness centrality, betweenness centrality, and modularity score. 
+        </p>
+        <ul class="project-details">
+          <li><strong>Language</strong><span>MATLAB, Python</span></li>
+        </ul>
+      </div>
+      <figure class="visual-figure">
+        <img src="images/image8.jpg"></img>
+        <figcaption>
+          Comparison between original bus networks and updated one after optimization through the greedy algorithm.
+          Three bus routes starting from the University of Utah campus in Salt Lake City are selected: starting node 80 in original vs. 1 in updated one.  
+        </figcaption>
+      </figure>
+      <p class="detail">
+        <span><strong>Primary Tasks</strong></span>
+        <br>
+        Building upon the approach designed by Chen and Chang (2015), I developed a greedy routing algorithm to reconfigure 
+        selected bus transit corridors for equitalbe park accessibility while preserving fixed original-destination nodes.
+        Computed Delta score--that is, composite index of closeness centrality, betweenness centrality, and graph modularity--to
+        maximize structural efficienty and evaluate network topology. Integrated spatial accessibility rules into the algorithm; specifically,
+        a bus node needs to be within a walkable distance (~402 meter) to the nearest park and deployed an iterative greedy selection untill the final node 
+        is converged to the destination node.  
+      </p>
+      <figure class="visual-figure">
+        <img src="images/image9.jpg"></img>
+        <figcaption>
+          Closeness and betweenness centrality for the original and updated bus network.
+        </figcaption>
+        <br>
+        <p class="detail">
+          <span><strong>Key Findings</strong></span>
+          <br>
+          Closeness centrality measures distances from one vertex to other vertices, indicating how a vertex is centered compared to 
+          other vertices. If a node adjacent to parks has a high closeness centrality, the path to access green space will likely be easier 
+          within a network. The average closeness centrality of the updated bus network was a <strong>37.5%</strong> higher than the original one. 
+          Meanwhile, betweenness centrality indicates which vertix has a higher influence on the flow passing between other vertices. If a bus node 
+          adjacent to parks has a higher betweenness score, this vertex is likely to contribute to the access to green space by connecting other bus nodes.
+          Average betweenness centrality was slightly higher for the original network.
+          Modularity score mainly relies on the distribution of access points (or nodes) that are located within a walkable distance from a park. 
+          The result shows that the updated bus network has a <strong>10%</strong> higher modularity score than the original one. 
+          This reveals that our bus network structure provides better accessibility and connectivity to green space than the original one.
+          Despite a few limitations (e.g., external factors that are crucial for building bus networks), this project suggests that 
+          public transit networks can be one of ways to promote equitable urban greening initiatives. 
+        </p> 
+      </figure>
+      </section>
+    
+      <section>
+        <h2>Designing learning management system (LMS) like Canvas based on the Model-Viewer-Controller architecture</h2>
+        <div class="two-column">
+        <p class="detail">
+            This capstone project involved architecting the server-side infrastructure and relational database for a Canvas-style Learning Management System (LMS). 
+            Operating within a Model-View-Controller (MVC) design pattern, the project focused on the Model and Controller layers, decoupling backend logic and database operations from the user interface. 
+            Using C# in Visual Studio Code and MySQL, the system dynamically translates user requests into optimized, secure database queries to manage complex academic workflows (such as user enrollment, course assignments, submissions, and grade tracking).
+        </p>
+        <ul class="project-details">
+          <li><strong>Language</strong><span>SQL, C#, JavaScript</span></li>
+        </ul>
+      </div>
+      <span><strong>Primary Tasks</strong></span>
+      <br>
+      Designed relational database schema in MySQL to satisfy requirements (e.g., primary-foreing key relationships, constraint enforcement, index optimizations).
+      Developed backend logics of a web-browser within an MVC architecture to programmatically execute and manage SQL quieries 
+      based on user input, ensuring data integrity and protection against SQL injection vulnerabilities.
+      <br>
+      <span><strong>Note: </strong>Due to the course policy, Github link was not provided.</span>
+      <figure class="visual-figure">
+        <img src="images/image10.jpg"></img>
+        <figcaption>
+          Designed entity-relationship diagram for project's learning management system.
+        </figcaption>
+      </figure>
+      <br>
+      
+      
+      </section>
+      
+    </section>
+
+
+  </main>
+
+  <footer>
+    <p>© 2026 Sungeun Shin</p>
+    <a href="mailto:sungeun.shin@utah.edu">sungeun.shin@utah.edu</a>
+  </footer>
+</body>
+</html>
